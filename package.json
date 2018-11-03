@@ -71,5 +71,11 @@
   "jest": {
     "testEnvironment": "node"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "ajv": "^6.5.4",
+    "argparse": "^1.0.10",
+    "jsnetworkx": "^0.3.4",
+    "lodash": "^4.17.11"
+  }
 }
