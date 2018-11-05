@@ -51,7 +51,7 @@
       "prettier"
     ],
     "env": {
-      "jest": true,
+      "mocha": true,
       "node": true
     },
     "rules": {
@@ -70,7 +70,7 @@
   "scripts": {
     "pretest": "eslint .",
     "precommit": "lint-staged",
-    "test": "jest"
+    "test": "mocha"
   },
   "repository": "oddguan/mcmc-simulation",
   "jest": {
