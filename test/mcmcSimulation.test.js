@@ -192,4 +192,35 @@ describe('mcmc graph simulation unit tests', () => {
     }
     mcmc.main(args)
   })
+
+  it('function calculateEConnectedZero test', () => {
+    let chain = new Map()
+    chain.set([[0, 1], [0, 2], [0, 3]], 5)
+    chain.set([[0, 1], [0, 2], [2, 3]], 3)
+    let E = mcmc.calculateEConnectedZero(chain)
+    assert.strictEqual(E, (6 + 15) / 8)
+  })
+
+  it('function calculateEEntireGraph test', () => {
+    let chain = new Map()
+    chain.set([[1, 2], [3, 4], [5, 6]], 10)
+    chain.set([[1, 2]], 3)
+    chain.set([[4, 5], [2, 1]], 4)
+    let expected = (3 * 10 + 1 * 3 + 2 * 4) / (10 + 3 + 4)
+    assert.strictEqual(mcmc.calculateEEntireGraph(chain), expected)
+  })
+
+  it('function calculateDistanceShortestPath test', () => {
+    let chain = new Map()
+    let g = new jsnx.Graph()
+    g.addNodesFrom([0, 1, 2, 3])
+    g.addWeightedEdgesFrom([[0, 1, 1], [1, 2, 1], [2, 3, 1]])
+    chain.set(g, 3)
+    g = new jsnx.Graph()
+    g.addNodesFrom([0, 1, 2, 3])
+    g.addWeightedEdgesFrom([[0, 1, 1], [1, 2, 1], [2, 3, 1], [3, 0, 2]])
+    chain.set(g, 2)
+    const expected = ((1 + 2 + 3) * 3 + (1 + 2 + 2) * 2) / 5
+    assert.strictEqual(mcmc.calculateDistanceShortestPath(chain, 4), expected)
+  })
 })
