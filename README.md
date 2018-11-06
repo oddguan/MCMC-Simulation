@@ -49,6 +49,10 @@ $ node lib/index.js
 * `-b/--burnin`: A flag to specify whether burn-in or not (still work-in-progess)
 * `-c/--coordinates`: The coordinates of the nodes
 
+## TODO
+
+* Burn-in functionality is currently not supported. Will be updated in the near future.
+
 
 ## License
 
