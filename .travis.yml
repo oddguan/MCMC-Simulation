@@ -2,9 +2,6 @@ language: node_js
 
 node_js:
   - "6"
-
-scripts: {
-  "test": "npm test lib/test"
-}
+  
 before_script:
   - npm install -g grunt-cli
