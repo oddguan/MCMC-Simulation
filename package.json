@@ -17,6 +17,7 @@
     "Markov Chain"
   ],
   "devDependencies": {
+    "acorn": "^6.0.4",
     "coveralls": "^3.0.2",
     "eslint": "^5.8.0",
     "eslint-config-prettier": "^3.0.1",
