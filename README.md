@@ -1,4 +1,4 @@
-# mcmc-simulation [![Build Status][travis-image]][travis-url][![Coverage percentage][coveralls-image]][coveralls-url]
+# mcmc-simulation [![Build Status](https://travis-ci.org/oddguan/MCMC-Simulation.svg?branch=master)](https://travis-ci.org/oddguan/MCMC-Simulation)[![Coverage Status](https://coveralls.io/repos/github/oddguan/MCMC-Simulation/badge.svg?branch=master)](https://coveralls.io/github/oddguan/MCMC-Simulation?branch=master)
 > Project 2 for CHE477
 
 ## Installation
@@ -17,9 +17,3 @@ mcmcSimulation('Rainbow');
 ## License
 
 MIT © [Chenxiao Guan]()
-
-
-[travis-image]: https://travis-ci.org/oddguan/mcmc-simulation.svg?branch=master
-[travis-url]: https://travis-ci.org/oddguan/mcmc-simulation
-[coveralls-image]: https://coveralls.io/repos/oddguan/mcmc-simulation/badge.svg
-[coveralls-url]: https://coveralls.io/r/oddguan/mcmc-simulation
