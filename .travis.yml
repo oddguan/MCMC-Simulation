@@ -1,5 +1,11 @@
 language: node_js
+
 node_js:
   - v10
   - v8
+
+scripts: {
+  "test": "npm test lib/test"
+}
+
 after_script: cat ./coverage/lcov.info | coveralls
