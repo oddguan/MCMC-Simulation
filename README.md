@@ -60,6 +60,8 @@ Contributions are welcome!!! Please feel free to submit a pull request, and I'll
 
 * Currently the project checks if two graphs are identical by counting the nodes, and doing a DFS starting at 0 on each of the graph to see if they produce the same result. This is obviously not good enough to compare two isomorphic graphs, but it should be good enough for my project. The API of jsnetworkx is just not friendly. Will update the project if the package improves its API.
 
+* Few in-line comments are written because I kind of hate them. I think those console.log statements that I left in the script when I was debugging should explain most of the code about what I'm doing in a specific part of the script. There is a description for each function that I wrote.
+
 ## License
 
 MIT © [Chenxiao Guan]()

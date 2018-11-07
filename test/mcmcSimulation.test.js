@@ -44,11 +44,13 @@ describe('mcmc graph simulation unit tests', () => {
     const NumVertices = 4
     mcmc.addCoordinates(g, NumVertices, coordinates)
     for (let i = 0; i < 4; i++) {
+      // check each coordinate is the same as given
       assert.deepStrictEqual(g.node.get(i).coordinate, [coordinates[2 * i], coordinates[2 * i + 1]])
     }
   })
 
   it('function calculateDistance test', () => {
+    // check if the Euclidean distance calculation is correct
     const a = { coordinate: [3, 2] }
     const b = { coordinate: [0, 0] }
     const cal = Math.sqrt(Math.pow(3, 2) + Math.pow(2, 2))
@@ -56,6 +58,7 @@ describe('mcmc graph simulation unit tests', () => {
   })
 
   it('function dfs test', () => {
+    // dfs through a cycle should just be the cycle in order
     let g = new jsnx.Graph()
     let cycle = [1, 2, 3, 4, 5]
     g.addCycle(cycle)
@@ -64,6 +67,7 @@ describe('mcmc graph simulation unit tests', () => {
   })
 
   it('function isConnected test', () => {
+    // makes two graphs, one connected one disconnected, check the output
     let g = new jsnx.Graph()
     const nodes = [0, 1, 2, 3]
     g.addNodesFrom(nodes)
@@ -76,6 +80,7 @@ describe('mcmc graph simulation unit tests', () => {
   })
 
   it('function bridges test', () => {
+    // make two graphs, one has two bridges one has zero bridges, check the output
     let g = new jsnx.Graph()
     let nodes = [0, 1, 2]
     g.addNodesFrom(nodes)
@@ -84,7 +89,7 @@ describe('mcmc graph simulation unit tests', () => {
     g.node.get(2).coordinate = [0, -1]
     g.addEdgesFrom([[0, 1], [0, 2]])
     assert.strictEqual(mcmc.bridges(g).length, 2)
-    g = new jsnx.Graph()
+    g = new jsnx.Graph() // another graph
     nodes = [0, 1, 2, 3]
     g.addNodesFrom(nodes)
     g.node.get(0).coordinate = [1, 2]
@@ -96,6 +101,7 @@ describe('mcmc graph simulation unit tests', () => {
   })
 
   it('function calculateTheta test', () => {
+    // check the theta calculation is correct
     let g = new jsnx.Graph()
     g.addNodesFrom([0, 1, 2, 3])
     g.addWeightedEdgesFrom([[0, 1, 1], [1, 2, 1], [2, 3, 1]])
@@ -133,14 +139,17 @@ describe('mcmc graph simulation unit tests', () => {
     let g = new jsnx.Graph()
     let n = 3
     let nodes = [0, 1, 2]
+    // complete graph, can only delete
     g.addNodesFrom(nodes)
     g.node.get(0).coordinate = [0, 0]
     g.node.get(1).coordinate = [0, 1]
     g.node.get(2).coordinate = [0, -1]
     g.addWeightedEdgesFrom([[0, 1, 1], [0, 2, 1], [1, 2, 2]])
+    // the second argument returned is a flag showing whether added or deleted
+    // checking the flag to make sure it is working correctly
     let result = mcmc.addOrDelete(g, n)
     assert.ok(!result[1])
-    g.removeEdge(1, 2)
+    g.removeEdge(1, 2) // incomplete graph with all bridges, so can only add new edge
     result = mcmc.addOrDelete(g, n)
     assert.ok(result[1])
   })
