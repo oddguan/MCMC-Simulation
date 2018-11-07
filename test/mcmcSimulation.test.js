@@ -33,7 +33,7 @@ describe('mcmc graph simulation unit tests', () => {
     assert.strictEqual(argsDefault.Temperature, 300)
     assert.strictEqual(argsDefault.r, 1)
     assert.strictEqual(argsDefault.iteration, 1000)
-    assert.strictEqual(argsDefault.NumVertices, 4)
+    assert.strictEqual(argsDefault.NumVertices, 5)
     assert.strictEqual(argsDefault.burnin, false)
     assert.deepStrictEqual(argsDefault.coordinates, '[0,1,1,1,3,2,1,5,7,10]')
   })

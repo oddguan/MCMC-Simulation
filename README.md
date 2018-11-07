@@ -42,17 +42,23 @@ $ node lib/index.js
 
 ### Arguments:
 
-* `-t/--Temperature`: The T variable specified in first equation above.
-* `-r`: The r variable specified in the first equation above.
-* `-i/--iteration`: The number of time steps that the markov chain goes through
-* `-n/--NumVertices`: The number of vertices that are going to be presented in the graph
-* `-b/--burnin`: A flag to specify whether burn-in or not (still work-in-progess)
-* `-c/--coordinates`: The coordinates of the nodes
+* `-t/--Temperature`: The T variable specified in first equation above. Default: 300
+* `-r`: The r variable specified in the first equation above. Default: 1
+* `-i/--iteration`: The number of time steps that the markov chain goes through. Default: 1000
+* `-n/--NumVertices`: The number of vertices that are going to be presented in the graph. Default: 5
+* `-b/--burnin`: A flag to specify whether burn-in or not (still work-in-progess). Default: false
+* `-c/--coordinates`: The coordinates of the nodes. Default: '[0,1,1,1,3,2,1,5,7,10]'
+
+## Contributions
+
+Contributions are welcome!!! Please feel free to submit a pull request, and I'll review it ASAP when I have time. If you are reading this, I really appreciate your time and I hope you'll enjoy using this simulator.
+
 
 ## TODO
 
 * Burn-in functionality is currently not supported. Will be updated in the near future.
 
+* Currently the project checks if two graphs are identical by counting the nodes, and doing a DFS starting at 0 on each of the graph to see if they produce the same result. This is obviously not good enough to compare two isomorphic graphs, but it should be good enough for my project. The API of jsnetworkx is just not friendly. Will update the project if the package improves its API.
 
 ## License
 
