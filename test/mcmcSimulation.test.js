@@ -186,7 +186,7 @@ describe('mcmc graph simulation unit tests', () => {
     chain.forEach((v, k, m) => {
       sum += v
     })
-    assert.strictEqual(sum, 5)
+    assert.strictEqual(sum, 3)
   })
 
   it('function main test', () => {
